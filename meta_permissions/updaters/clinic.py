@@ -3,9 +3,7 @@ from edc_permissions.utils import (
     add_permissions_to_group_by_app_label,
     add_permissions_to_group_by_codenames,
     make_view_only_app_label,
-    make_view_only_model,
     remove_historical_group_permissions,
-    remove_permissions_by_model,
     remove_pii_permissions_from_group,
 )
 

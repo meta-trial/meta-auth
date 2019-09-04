@@ -17,6 +17,5 @@ urlpatterns = [
     path("meta_screening/", include("meta_screening.urls")),
     path("meta_consent/", include("meta_consent.urls")),
     path("meta_subject/", include("meta_subject.urls")),
-    path("administration/", AdministrationView.as_view(),
-         name="administration_url"),
+    path("administration/", AdministrationView.as_view(), name="administration_url"),
 ]
