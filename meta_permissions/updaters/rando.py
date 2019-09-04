@@ -15,8 +15,7 @@ def update_rando_group_permissions():
     group = Group.objects.get(name=group_name)
     group.permissions.clear()
 
-    add_permissions_to_group_by_model(
-        group, "edc_randomization.randomizationlist")
+    add_permissions_to_group_by_model(group, "edc_randomization.randomizationlist")
     make_view_only_model(group, "edc_randomization.randomizationlist")
 
     add_permissions_to_group_by_codenames(

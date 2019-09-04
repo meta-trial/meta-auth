@@ -10,5 +10,4 @@ class GroupsUpdater(Base):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.ensure_users_not_in_group(
-            RANDO, users_by_groups=[AUDITOR, LAB])
+        self.ensure_users_not_in_group(RANDO, users_by_groups=[AUDITOR, LAB])
