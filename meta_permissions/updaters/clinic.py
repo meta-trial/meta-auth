@@ -5,6 +5,7 @@ from edc_permissions.utils import (
     make_view_only_app_label,
     remove_historical_group_permissions,
     remove_pii_permissions_from_group,
+    remove_permissions_by_model,
 )
 
 from ..group_names import CLINIC
@@ -43,5 +44,9 @@ def extra_clinic_group_permissions():
     )
 
     remove_pii_permissions_from_group(group, extra_pii_models=pii_models)
+    remove_permissions_by_model(group, "meta_prn.unblindingrequest")
+    remove_permissions_by_model(group, "meta_prn.unblindingreview")
+    remove_permissions_by_model(group, "meta_prn.unblindingrequestoruser")
+    remove_permissions_by_model(group, "meta_prn.unblindingrevieweruser")
     remove_historical_group_permissions(group)
     return group_name

@@ -1,15 +1,16 @@
 from edc_permissions.constants import (
     ADMINISTRATION,
+    AE_REVIEW,
     EVERYONE,
     CLINIC,
     PII,
     LAB,
+    RANDO,
     PII_VIEW,
+    SCREENING,
+    UNBLINDING_REVIEWERS,
+    UNBLINDING_REQUESTORS,
 )
-
-RANDO = "RANDO"
-AE_REVIEW = "AE_REVIEW"
-SCREENING = "SCREENING"
 
 # commonly grouped like this ..
 CLINIC_USER_GROUPS = [

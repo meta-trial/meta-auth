@@ -26,6 +26,8 @@ from edc_permissions.constants import (
     PHARMACY,
     PII,
     PII_VIEW,
+    UNBLINDING_REVIEWERS,
+    UNBLINDING_REQUESTORS,
 )
 
 
@@ -37,6 +39,8 @@ from .lab import lab
 from .pii_view import pii_view
 from .pii import pii
 from .rando import rando
+from .screening import screening
+from .unblinding import unblinding_requestors, unblinding_reviewers
 
 
 CODENAMES = {
@@ -54,4 +58,6 @@ CODENAMES = {
     PII: pii,
     PII_VIEW: pii_view,
     RANDO: rando,
+    UNBLINDING_REVIEWERS: unblinding_reviewers,
+    UNBLINDING_REQUESTORS: unblinding_requestors,
 }
