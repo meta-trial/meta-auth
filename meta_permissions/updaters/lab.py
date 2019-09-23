@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import Group
 from edc_permissions import LAB, LAB_VIEW
 from edc_permissions.utils import (
@@ -6,11 +7,10 @@ from edc_permissions.utils import (
     remove_permissions_from_model_by_action,
     remove_pii_permissions_from_group,
     remove_historical_group_permissions,
+    make_view_only_model,
 )
 
 from .pii_models import pii_models
-from edc_permissions.utils.generic import make_view_only_model
-from django.conf import settings
 
 
 def extra_lab_group_permissions():
@@ -18,9 +18,11 @@ def extra_lab_group_permissions():
     group_name = LAB
     group = Group.objects.get(name=group_name)
 
-    add_permissions_to_group_by_model(group, settings.SUBJECT_REQUISITION_MODEL)
+    add_permissions_to_group_by_model(
+        group, settings.SUBJECT_REQUISITION_MODEL)
     remove_permissions_from_model_by_action(
-        group, model=settings.SUBJECT_REQUISITION_MODEL, actions=["delete", "add"]
+        group, model=settings.SUBJECT_REQUISITION_MODEL, actions=[
+            "delete", "add"]
     )
 
     add_permissions_to_group_by_codenames(
@@ -44,7 +46,8 @@ def extra_lab_view_group_permissions():
     group_name = LAB_VIEW
     group = Group.objects.get(name=group_name)
 
-    add_permissions_to_group_by_model(group, settings.SUBJECT_REQUISITION_MODEL)
+    add_permissions_to_group_by_model(
+        group, settings.SUBJECT_REQUISITION_MODEL)
     make_view_only_model(group, settings.SUBJECT_REQUISITION_MODEL)
     remove_pii_permissions_from_group(group, extra_pii_models=pii_models)
     remove_historical_group_permissions(group)
