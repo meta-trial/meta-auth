@@ -9,10 +9,10 @@ unblinding_requestors = [
 
 
 unblinding_reviewers = [
-    "meta_prn.add_unblindingapproval",
-    "meta_prn.change_unblindingapproval",
-    "meta_prn.delete_unblindingapproval",
-    "meta_prn.view_unblindingapproval",
-    "meta_prn.view_historicalunblindingapproval",
+    "meta_prn.add_unblindingreview",
+    "meta_prn.change_unblindingreview",
+    "meta_prn.delete_unblindingreview",
+    "meta_prn.view_unblindingreview",
+    "meta_prn.view_historicalunblindingreview",
     "meta_prn.view_unblindingrevieweruser",
 ]
