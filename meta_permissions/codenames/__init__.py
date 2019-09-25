@@ -32,6 +32,7 @@ from edc_permissions.constants import (
 
 
 from ..group_names import RANDO, AE_REVIEW
+from .ae import ae
 from .ae_review import ae_review
 from .auditor import auditor
 from .clinic import clinic
@@ -40,6 +41,7 @@ from .pii_view import pii_view
 from .pii import pii
 from .rando import rando
 from .screening import screening
+from .tmg import tmg
 from .unblinding import unblinding_requestors, unblinding_reviewers
 
 
