@@ -74,8 +74,7 @@ class TestPermissions(TestCase):
 
     def test_data_manager(self):
         # update_permissions()
-        compare_codenames_for_group(
-            group_name=DATA_MANAGER, expected=data_manager)
+        compare_codenames_for_group(group_name=DATA_MANAGER, expected=data_manager)
 
     def test_auditors(self):
         # update_permissions()
@@ -83,8 +82,7 @@ class TestPermissions(TestCase):
 
     def test_administrations(self):
         # update_permissions()
-        compare_codenames_for_group(
-            group_name=ADMINISTRATION, expected=administration)
+        compare_codenames_for_group(group_name=ADMINISTRATION, expected=administration)
 
     def test_account_manager(self):
         # update_permissions()
@@ -109,8 +107,7 @@ class TestPermissions(TestCase):
     def test_permissions_updater(self):
         # update_permissions()
         for group_name, expected in CODENAMES.items():
-            compare_codenames_for_group(
-                group_name=group_name, expected=expected)
+            compare_codenames_for_group(group_name=group_name, expected=expected)
 
     def test_tmg(self):
         # update_permissions()

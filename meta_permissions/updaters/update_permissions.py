@@ -5,8 +5,13 @@ from edc_permissions.utils import (
 )
 
 from ..group_names import (
-    RANDO, AE_REVIEW, SCREENING, UNBLINDING_REVIEWERS, UNBLINDING_REQUESTORS,
-    AE, TMG,
+    RANDO,
+    AE_REVIEW,
+    SCREENING,
+    UNBLINDING_REVIEWERS,
+    UNBLINDING_REQUESTORS,
+    AE,
+    TMG,
 )
 from .ae import update_ae_group_permissions
 from .ae_review import update_ae_review_group_permissions
@@ -43,8 +48,7 @@ def update_permissions():
     create_edc_dashboard_permissions(
         extra_codename_tpls=[
             ("edc_dashboard.view_ae_listboard", "Can view AE Listboard"),
-            ("edc_dashboard.view_screening_listboard",
-             "Can view Screening Listboard"),
+            ("edc_dashboard.view_screening_listboard", "Can view Screening Listboard"),
             ("edc_dashboard.view_subject_listboard", "Can view Subject Listboard"),
         ]
     )
@@ -59,6 +63,13 @@ def update_permissions():
     PermissionsUpdater(
         extra_pii_models=extra_pii_models,
         extra_updaters=extra_updaters,
-        extra_group_names=[AE, AE_REVIEW, RANDO, SCREENING, TMG,
-                           UNBLINDING_REVIEWERS, UNBLINDING_REQUESTORS],
+        extra_group_names=[
+            AE,
+            AE_REVIEW,
+            RANDO,
+            SCREENING,
+            TMG,
+            UNBLINDING_REVIEWERS,
+            UNBLINDING_REQUESTORS,
+        ],
     )

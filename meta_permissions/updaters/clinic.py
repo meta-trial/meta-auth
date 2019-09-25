@@ -17,12 +17,7 @@ def extra_clinic_group_permissions():
     group_name = CLINIC
     group = Group.objects.get(name=group_name)
 
-    for app_label in [
-        "meta_lists",
-        "meta_prn",
-        "meta_subject",
-        "edc_offstudy",
-    ]:
+    for app_label in ["meta_lists", "meta_prn", "meta_subject", "edc_offstudy"]:
         add_permissions_to_group_by_app_label(group, app_label)
 
     make_view_only_app_label(group, "meta_lists")
