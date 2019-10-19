@@ -50,11 +50,13 @@ def update_permissions():
             ("edc_dashboard.view_ae_listboard", "Can view AE Listboard"),
             ("edc_dashboard.view_screening_listboard", "Can view Screening Listboard"),
             ("edc_dashboard.view_subject_listboard", "Can view Subject Listboard"),
+            ("edc_dashboard.view_tmg_listboard", "Can view TMG Listboard"),
         ]
     )
     create_edc_navbar_permissions(
         extra_codename_tpls=[
             ("edc_navbar.nav_ae_section", "Can access AE section"),
+            ("edc_navbar.nav_tmg_section", "Can access TMG section"),
             ("edc_navbar.nav_subject_section", "Can access subject section"),
             ("edc_navbar.nav_screening_section", "Can access screening section"),
         ]
