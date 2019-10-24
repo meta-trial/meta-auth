@@ -1,32 +1,31 @@
 from django.test import TestCase, tag
+
+from edc_permissions.update import update_group_permissions, compare_codenames_for_group
+from meta_permissions.codenames_by_group import codenames_by_group
+
 from edc_permissions import (
     ACCOUNT_MANAGER,
-    ADMINISTRATION,
     AE,
     AE_REVIEW,
     AUDITOR,
     CLINIC,
-    DATA_MANAGER,
     EVERYONE,
-    EXPORT,
     LAB,
     LAB_VIEW,
-    PHARMACY,
+    SCREENING,
     PII,
     PII_VIEW,
     RANDO,
     TMG,
+    UNBLINDING_REVIEWERS,
+    UNBLINDING_REQUESTORS,
 )
 
-from edc_permissions.codenames import pharmacy, export, data_manager, administration
-from edc_permissions.utils import compare_codenames_for_group
 
-from ..codenames import (
+from edc_permissions.codenames import (
     ae,
     ae_review,
     account_manager,
-    auditor,
-    clinic,
     everyone,
     lab,
     lab_view,
@@ -34,15 +33,21 @@ from ..codenames import (
     pii_view,
     rando,
     tmg,
-    CODENAMES,
 )
-from ..updaters import update_permissions
+
+from ..codenames import (
+    auditor,
+    clinic,
+    screening,
+    unblinding_requestors,
+    unblinding_reviewers,
+)
 
 
 class TestPermissions(TestCase):
     @classmethod
     def setUpClass(cls):
-        update_permissions()
+        update_group_permissions(codenames_by_group=codenames_by_group, verbose=True)
         return super(TestPermissions, cls).setUpClass()
 
     def test_pii(self):
@@ -60,29 +65,26 @@ class TestPermissions(TestCase):
         # update_permissions()
         compare_codenames_for_group(group_name=AE_REVIEW, expected=ae_review)
 
-    def test_pharmacy(self):
+    def test_screening(self):
         # update_permissions()
-        compare_codenames_for_group(group_name=PHARMACY, expected=pharmacy)
+        compare_codenames_for_group(group_name=SCREENING, expected=screening)
 
-    def test_export(self):
+    def test_unblinding(self):
         # update_permissions()
-        compare_codenames_for_group(group_name=EXPORT, expected=export)
+        compare_codenames_for_group(
+            group_name=UNBLINDING_REVIEWERS, expected=unblinding_reviewers
+        )
+        compare_codenames_for_group(
+            group_name=UNBLINDING_REQUESTORS, expected=unblinding_requestors
+        )
 
     def test_everyone(self):
         # update_permissions()
         compare_codenames_for_group(group_name=EVERYONE, expected=everyone)
 
-    def test_data_manager(self):
-        # update_permissions()
-        compare_codenames_for_group(group_name=DATA_MANAGER, expected=data_manager)
-
     def test_auditors(self):
         # update_permissions()
         compare_codenames_for_group(group_name=AUDITOR, expected=auditor)
-
-    def test_administrations(self):
-        # update_permissions()
-        compare_codenames_for_group(group_name=ADMINISTRATION, expected=administration)
 
     def test_account_manager(self):
         # update_permissions()
@@ -90,7 +92,6 @@ class TestPermissions(TestCase):
             group_name=ACCOUNT_MANAGER, expected=account_manager
         )
 
-    @tag("1")
     def test_clinic(self):
         # update_permissions()
         compare_codenames_for_group(group_name=CLINIC, expected=clinic)
@@ -103,11 +104,6 @@ class TestPermissions(TestCase):
         # update_permissions()
         compare_codenames_for_group(group_name=LAB, expected=lab)
         compare_codenames_for_group(group_name=LAB_VIEW, expected=lab_view)
-
-    def test_permissions_updater(self):
-        # update_permissions()
-        for group_name, expected in CODENAMES.items():
-            compare_codenames_for_group(group_name=group_name, expected=expected)
 
     def test_tmg(self):
         # update_permissions()
