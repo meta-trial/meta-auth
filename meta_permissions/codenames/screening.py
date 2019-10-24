@@ -1,4 +1,6 @@
-screening = [
+from edc_permissions.codenames import screening
+
+screening += [
     "meta_screening.add_screeningpartone",
     "meta_screening.add_screeningpartthree",
     "meta_screening.add_screeningparttwo",

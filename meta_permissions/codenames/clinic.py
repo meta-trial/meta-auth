@@ -1,15 +1,6 @@
 from edc_permissions.codenames import clinic
 
 clinic += [
-    "edc_adverse_event.view_aeclassification",
-    "edc_adverse_event.view_causeofdeath",
-    "edc_adverse_event.view_saereason",
-    "edc_dashboard.view_ae_listboard",
-    "edc_dashboard.view_screening_listboard",
-    "edc_dashboard.view_subject_listboard",
-    "edc_navbar.nav_ae_section",
-    "edc_navbar.nav_screening_section",
-    "edc_navbar.nav_subject_section",
     "meta_lists.view_arvregimens",
     "meta_lists.view_baselinesymptoms",
     "meta_lists.view_diabetessymptoms",
