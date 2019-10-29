@@ -1,4 +1,4 @@
-from edc_permissions.codenames import screening
+from edc_auth.codenames import screening
 
 screening += [
     "meta_screening.add_screeningpartone",

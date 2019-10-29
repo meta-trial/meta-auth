@@ -1,9 +1,9 @@
 from django.test import TestCase, tag
+from edc_auth.update import update_group_permissions, compare_codenames_for_group
 
-from edc_permissions.update import update_group_permissions, compare_codenames_for_group
-from meta_permissions.codenames_by_group import codenames_by_group
+from ..codenames_by_group import codenames_by_group
 
-from edc_permissions import (
+from edc_auth import (
     ACCOUNT_MANAGER,
     AE,
     AE_REVIEW,
@@ -22,7 +22,7 @@ from edc_permissions import (
 )
 
 
-from edc_permissions.codenames import (
+from edc_auth.codenames import (
     ae,
     ae_review,
     account_manager,
@@ -57,6 +57,7 @@ class TestPermissions(TestCase):
         # show_permissions_for_group(group_name=PII_VIEW)
         compare_codenames_for_group(group_name=PII_VIEW, expected=pii_view)
 
+    @tag("1")
     def test_ae(self):
         # update_permissions()
         compare_codenames_for_group(group_name=AE, expected=ae)

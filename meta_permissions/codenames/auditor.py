@@ -1,4 +1,4 @@
-from edc_permissions.codenames import auditor
+from edc_auth.codenames import auditor
 
 auditor += [
     "meta_ae.view_aefollowup",
