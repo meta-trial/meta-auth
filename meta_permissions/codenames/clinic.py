@@ -1,4 +1,4 @@
-from edc_permissions.codenames import clinic
+from edc_auth.codenames import clinic
 
 clinic += [
     "meta_lists.view_arvregimens",

@@ -1,10 +1,10 @@
-from edc_permissions import (
+from edc_auth import (
     AUDITOR,
     CLINIC,
     SCREENING,
     UNBLINDING_REQUESTORS,
     UNBLINDING_REVIEWERS,
-    default_codenames_by_group,
+    codenames_by_group,
 )
 
 from .codenames import (
@@ -14,8 +14,6 @@ from .codenames import (
     unblinding_requestors,
     unblinding_reviewers,
 )
-
-codenames_by_group = {k: v for k, v in default_codenames_by_group.items()}
 
 
 codenames_by_group[AUDITOR] = auditor
