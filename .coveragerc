@@ -1,4 +1,4 @@
 [run]
-include = meta_permissions/*
-omit = meta_permissions/tests/*
+include = meta_auth/*
+omit = meta_auth/tests/*
 branch = 1

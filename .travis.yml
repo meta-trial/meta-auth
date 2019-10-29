@@ -16,7 +16,7 @@ install:
 - pip install flake8 coverage codecov tox-travis
 
 before_script:
-- flake8 meta_permissions
+- flake8 meta_auth
 - mysql -e 'create database edc character set utf8;'
 
 script:
