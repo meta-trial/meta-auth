@@ -15,7 +15,7 @@ extras = dict(
 )
 
 
-app_name = 'meta_permissions'
+app_name = 'meta_auth'
 base_dir = dirname(abspath(__file__))
 
 DEFAULT_SETTINGS = DefaultTestSettings(
@@ -82,7 +82,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         'meta_dashboard.apps.AppConfig',
         'meta_labs.apps.AppConfig',
         'meta_lists.apps.AppConfig',
-        'meta_permissions.apps.AppConfig',
+        'meta_auth.apps.AppConfig',
         'meta_prn.apps.AppConfig',
         'meta_screening.apps.AppConfig',
         'meta_subject.apps.AppConfig',
