@@ -19,20 +19,20 @@ with open(join(dirname(abspath(__file__)), 'requirements.txt')) as f:
 os.chdir(normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='meta-permissions',
+    name='meta-auth',
     version=VERSION,
     author=u'Erik van Widenfelt',
     author_email='ew2789@gmail.com',
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/meta-trial/meta-permissions',
+    url='https://github.com/meta-trial/meta-auth',
     license='GPL license, see LICENSE',
     description='Authentication and Permissions',
     long_description=README,
     zip_safe=False,
-    keywords='django meta EDC permissions',
+    keywords='django meta EDC auth and permissions',
     install_requires=[
-        'edc-permissions'],
+        'edc-auth'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
