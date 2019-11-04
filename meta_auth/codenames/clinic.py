@@ -7,6 +7,7 @@ clinic += [
     "meta_lists.view_offstudyreasons",
     "meta_lists.view_oiprophylaxis",
     "meta_lists.view_symptoms",
+    "meta_lists.view_nonadherence",
     "meta_prn.add_endofstudy",
     "meta_prn.add_losstofollowup",
     "meta_prn.add_onschedule",
