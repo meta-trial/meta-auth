@@ -21,6 +21,7 @@ auditor += [
     "meta_lists.view_offstudyreasons",
     "meta_lists.view_oiprophylaxis",
     "meta_lists.view_symptoms",
+    "meta_lists.view_nonadherence",
     "meta_prn.view_endofstudy",
     "meta_prn.view_historicalendofstudy",
     "meta_prn.view_historicallosstofollowup",
