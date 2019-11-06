@@ -45,6 +45,7 @@ auditor += [
     "meta_screening.view_screeningpartthree",
     "meta_screening.view_screeningparttwo",
     "meta_screening.view_subjectscreening",
+    "meta_screening.view_subjectrefusal",
     "meta_subject.view_bloodresultsfbc",
     "meta_subject.view_bloodresultsglu",
     "meta_subject.view_bloodresultshba1c",
