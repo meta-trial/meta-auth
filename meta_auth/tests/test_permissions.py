@@ -1,8 +1,6 @@
 from django.test import TestCase, tag
-from edc_auth.update import update_group_permissions, compare_codenames_for_group
-
-from ..codenames_by_group import codenames_by_group
-
+from edc_auth.utils import compare_codenames_for_group
+from edc_auth.group_permissions_updater import GroupPermissionsUpdater
 from edc_auth import (
     ACCOUNT_MANAGER,
     AE,
@@ -21,7 +19,6 @@ from edc_auth import (
     UNBLINDING_REQUESTORS,
 )
 
-
 from edc_auth.codenames import (
     ae,
     ae_review,
@@ -31,7 +28,7 @@ from edc_auth.codenames import (
     lab_view,
     pii,
     pii_view,
-    rando,
+    get_rando,
     tmg,
 )
 
@@ -42,12 +39,15 @@ from ..codenames import (
     unblinding_requestors,
     unblinding_reviewers,
 )
+from ..codenames_by_group import codenames_by_group
 
 
 class TestPermissions(TestCase):
     @classmethod
     def setUpClass(cls):
-        update_group_permissions(codenames_by_group=codenames_by_group, verbose=True)
+        GroupPermissionsUpdater(
+            codenames_by_group=codenames_by_group,
+            verbose=True)
         return super(TestPermissions, cls).setUpClass()
 
     def test_pii(self):
@@ -99,7 +99,7 @@ class TestPermissions(TestCase):
 
     def test_rando(self):
         # update_permissions()
-        compare_codenames_for_group(group_name=RANDO, expected=rando)
+        compare_codenames_for_group(group_name=RANDO, expected=get_rando())
 
     def test_lab(self):
         # update_permissions()
