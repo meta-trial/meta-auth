@@ -39,13 +39,15 @@ from ..codenames import (
     unblinding_requestors,
     unblinding_reviewers,
 )
-from ..codenames_by_group import codenames_by_group
+from ..codenames_by_group import get_codenames_by_group
 
 
 class TestPermissions(TestCase):
     @classmethod
     def setUpClass(cls):
-        GroupPermissionsUpdater(codenames_by_group=codenames_by_group, verbose=True)
+        GroupPermissionsUpdater(
+            codenames_by_group=get_codenames_by_group(), verbose=True
+        )
         return super(TestPermissions, cls).setUpClass()
 
     def test_pii(self):
