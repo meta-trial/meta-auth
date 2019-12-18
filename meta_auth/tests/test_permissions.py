@@ -18,7 +18,6 @@ from edc_auth import (
     UNBLINDING_REVIEWERS,
     UNBLINDING_REQUESTORS,
 )
-
 from edc_auth.codenames import (
     ae,
     ae_review,
@@ -57,7 +56,6 @@ class TestPermissions(TestCase):
         # show_permissions_for_group(group_name=PII_VIEW)
         compare_codenames_for_group(group_name=PII_VIEW, expected=pii_view)
 
-    @tag("1")
     def test_ae(self):
         # update_permissions()
         compare_codenames_for_group(group_name=AE, expected=ae)
