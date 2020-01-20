@@ -58,6 +58,7 @@ auditor += [
     "meta_subject.view_historicalbloodresultsfbc",
     "meta_subject.view_historicalbloodresultsglu",
     "meta_subject.view_historicalbloodresultshba1c",
+    "meta_subject.view_historicalbloodresultslipid",
     "meta_subject.view_historicalbloodresultslft",
     "meta_subject.view_historicalbloodresultsrft",
     "meta_subject.view_historicalcomplications",
